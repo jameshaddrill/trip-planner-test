@@ -1,0 +1,15 @@
+{
+  "name": "trip-planner-test",
+  "version": "1.0.0",
+  "description": "Test project to create a plan-a-trip feature",
+  "main": "index.js",
+  "repository": "git@gitlab.com:awhenderson/trip-planner-test.git",
+  "author": "ahenderson <allan.henderson@visitscotland.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@vue/cli": "^4.2.2",
+    "jest": "^25.1.0",
+    "localforage": "^1.7.3"
+  }
+}
