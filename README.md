@@ -25,7 +25,7 @@ Use the basic wireframes at https://mydraft.cc/bpbd06d1ifn2ps5ua8kg and https://
 
 - Try and make each commit as close to each defined task below (there are some exceptions to this so don't worry too much):
 
-    -   Install dependencies and mock the articles DB routing - /articles and /articles/:id
+    -   Install dependencies and mock the articles DB routing - /articles and /article/:id
     -   Get the list of articles and render article titles and snippet content to the Home page
     -   Add a placeholder liked/unliked trip planner widget showing which articles in the list have been liked
     -   Add an article detail page with appropriate calls to the API
