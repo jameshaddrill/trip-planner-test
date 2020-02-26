@@ -2,6 +2,8 @@
 
 Your assignment is to implement a TripPlanner Widget & dashboard that records a user's likes on destination articles and a subsequent dashboard to manage their likes.
 
+Fork this repo to start the test in your own time, allow a couple of hours
+
 ### More detailed brief
 
 VisitScotland's users are requesting some way to keep a note of the articles and destinations they like the sound of so that they can create a simple itinerary
