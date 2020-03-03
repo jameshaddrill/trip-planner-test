@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-12 col-md-8" v-if="$root.dataLoaded && likedArticlesSet">
                 <h1 class="trip-planner__title">My trip planner</h1>
-                <section class="trip-planner" v-if="likedArticles.length > 0">
+                <section class="trip-planner" v-if="likedArticles && likedArticles.length > 0">
                     <div class="trip-planner__listing"  v-for="article in filteredArticles" :key="article._id">
-                            <h2 class="trip-planner__title"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
+                            <h2 class="trip-planner__title h2"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
                             <label 
                                 class="trip-planner__label"
                                 :for="article._id"                    
@@ -53,8 +53,8 @@
         },
         mounted() {
             this.$localStorage.getItem('likedArticles').then((likedArticles) => {
-                this.likedArticlesSet = true;
                 this.likedArticles = likedArticles;
+                this.likedArticlesSet = true;
             });
         },
         methods:{
@@ -79,6 +79,16 @@
 
         &__title {
             margin-bottom: 2rem;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+            }
         }
 
         &__label {

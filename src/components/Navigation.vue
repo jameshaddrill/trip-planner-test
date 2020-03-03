@@ -1,8 +1,8 @@
 <template>
     <nav class="nav">
         <ul class="nav__list">
-            <li class="nav__list-item"><router-link to="/">Home</router-link>
-            <li class="nav__list-item"><router-link to="/trip-planner">My Trip Planner</router-link></li>
+            <li class="nav__list-item"><router-link class="btn" to="/">Home</router-link>
+            <li class="nav__list-item"><router-link class="btn" to="/trip-planner">My Trip Planner</router-link></li>
         </ul>
     </nav>
 </template>

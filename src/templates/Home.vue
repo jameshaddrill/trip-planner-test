@@ -19,35 +19,35 @@
 </template>
 
 <script>
-import ArticleListingItem from '../components/ArticleListingItem.vue';
-export default{
-  name: 'home',
-  components: {
-	  'article-listing-item' : ArticleListingItem
-  },
-  data(){
-    return{
-	  articles: {},
-	  likedArticles: []
-    }
-  },
-  mounted() {
-	  	this.$localStorage.getItem('likedArticles').then((value) => {
+	import ArticleListingItem from '../components/ArticleListingItem.vue';
+	export default{
+		name: 'home',
+		components: {
+			'article-listing-item' : ArticleListingItem
+		},
+	data(){
+		return{
+		articles: {},
+		likedArticles: []
+		}
+	},
+	mounted() {
+		this.$localStorage.getItem('likedArticles').then((value) => {
 			this.likedArticles = value || [];
 		});
-  },
-  methods:{
-	  listingClickEvent(value) {
-		  if (value.event === 'removeListing') {
-			  const index = this.likedArticles.indexOf(value.id);
-			  this.likedArticles.splice(index, 1);
-		  } else {
-			  this.likedArticles.push(value.id);
-		  }
+	},
+	methods:{
+		listingClickEvent(value) {
+			if (value.event === 'removeListing') {
+				const index = this.likedArticles.indexOf(value.id);
+				this.likedArticles.splice(index, 1);
+			} else {
+				this.likedArticles.push(value.id);
+			}
 
-		  this.$localStorage.setItem('likedArticles', this.likedArticles);
-	  }
-  }
+			this.$localStorage.setItem('likedArticles', this.likedArticles);
+		}
+	}
 }
 </script>
 

@@ -2,7 +2,7 @@
     <header class="container">
         <div class="row">
             <div class="col-12 site-header ">
-            <h1 class="site-header__title">VisitScotland Blog</h1>
+            <h1 class="site-header__title h1">VisitScotland Blog</h1>
             <navigation />
             </div>
         </div>
@@ -28,5 +28,6 @@ export default{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 2.5rem;
     }
 </style>

@@ -1,3 +1,8 @@
+### Running the project
+```yarn start``` will run the project on http://localhost:3000
+```yarn test``` will run the unit test sample
+
+
 ### Goal
 
 Your assignment is to implement a TripPlanner Widget & dashboard that records a user's likes on destination articles and a subsequent dashboard to manage their likes.

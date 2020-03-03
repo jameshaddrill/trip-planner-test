@@ -1,0 +1,19 @@
+.btn {
+    height: 40px;
+    padding: 0 30px;
+    background: $secondary-color;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 1s ease;
+
+    &:visited {
+        color: #fff;
+    }
+
+    &:hover {
+        background: $primary-color;
+    }
+}

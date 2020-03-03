@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="article-listing__title-bar" v-if="$root.dataLoaded">
-            <h2 class="article-listing__title"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
+            <h2 class="article-listing__title h2"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
             <label 
                 :for="article._id" 
                 :class="['article-listing__label', {'article-listing__label--liked' : checkLiked(article._id)}]"
@@ -38,6 +38,7 @@
                 }
             },
             clickedListing: function(id) {
+                // check if listing is already in the liked articles array
                 if (this.likedArticles.includes(id)) {
                     this.$emit('clickedListing', {'event' : 'removeListing', 'id' : id})
                 } else {
@@ -58,7 +59,16 @@
 		}
 
 		&__title {
-			 margin-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
 		}
 
 		&__label {
@@ -66,19 +76,13 @@
 			width: 20px;
 			height: 20px;
 			background: url('../img/icons/heart-empty.png') 0 0 no-repeat;
-			background-size: contain;
+            background-size: contain;
+            cursor: pointer;
+            transition: background 0.5s ease;
 
-			&--liked {
+			&--liked, &:hover {
 				background: url('../img/icons/heart-full.png') 0 0 no-repeat;
 				background-size: contain;
-			}
-		}
-
-		&__liked {
-			background: blue;
-
-			&:checked {
-				background: pink;
 			}
 		}
 	}

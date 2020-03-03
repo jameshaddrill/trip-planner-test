@@ -18,7 +18,7 @@ module.exports = {
 		}),
 		new VueLoaderPlugin()
 	],
-	devServer: { // Configure the local web server
+	devServer: {
 		historyApiFallback: true
 	},
   	module: {
@@ -50,7 +50,6 @@ module.exports = {
 		{
 			test: /\.(png|svg|jpe?g|gif)$/,
 			loader: 'url-loader',
-			//include: path.join(__dirname, ''),
 			options: {
 			publicPath: './',
 			limit: 10000,

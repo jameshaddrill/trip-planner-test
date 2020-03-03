@@ -9,11 +9,23 @@ select {
     @include font-size(30, 34);
 }
 
+.h1, .h2 {
+    color: $primary-color;
+}
+
+.h2 {
+    @include font-size(26,28);
+}
+
 p, 
 label, 
 li, 
 input {
     font-weight: 300;
+
+    &.small {
+        @include font-size(12);
+    }
 }
 
 .error-text {
