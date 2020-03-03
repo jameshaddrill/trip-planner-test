@@ -1,10 +1,10 @@
 <template>
     <section>
-        <div class="article-listing__title-bar">
+        <div class="article-listing__title-bar" v-if="$root.dataLoaded">
             <h2 class="article-listing__title"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
             <label 
                 :for="article._id" 
-                :class="['article-listing__label', {'article-listing__label--liked' : (checkLiked(article._id))}]"
+                :class="['article-listing__label', {'article-listing__label--liked' : checkLiked(article._id)}]"
                 @click="clickedListing(article._id)">
                 Article liked
             </label>
@@ -33,7 +33,7 @@
         },
         methods: {
             checkLiked: function(id) {
-                if (this.likedArticles.includes(id)) {
+                if (this.likedArticles && this.likedArticles.includes(id)) {
                     return true;
                 }
             },

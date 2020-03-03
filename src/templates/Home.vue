@@ -33,7 +33,7 @@ export default{
   },
   mounted() {
 	  	this.$localStorage.getItem('likedArticles').then((value) => {
-			this.likedArticles = value;
+			this.likedArticles = value || [];
 		});
   },
   methods:{

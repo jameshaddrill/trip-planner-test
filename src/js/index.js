@@ -33,6 +33,6 @@ const vm = new Vue({
             .then(response => {
                 this.articles = response.data;
                 this.dataLoaded = true;
-            })
+        })
     }
 }).$mount('#app');
