@@ -1,9 +1,9 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8" v-if="$root.dataLoaded && likedArticlesSet">
                 <h1 class="trip-planner__title">My trip planner</h1>
-                <section class="trip-planner" v-if="$root.dataLoaded && likedArticlesSet">
+                <section class="trip-planner" v-if="likedArticles.length > 0">
                     <div class="trip-planner__listing"  v-for="article in filteredArticles" :key="article._id">
                             <h2 class="trip-planner__title"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
                             <label 
@@ -19,6 +19,9 @@
                                 :value="article._id" 
                             />
                     </div>
+                </section>
+                <section v-else>
+                    <h2 class="trip-planner__title">You haven't added any trips yet!</h2>
                 </section>
             </div>
         </div>
