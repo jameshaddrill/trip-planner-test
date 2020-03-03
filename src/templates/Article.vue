@@ -7,7 +7,7 @@
 
 <script>
 export default{
-  // name:
+  name: 'article',
   data(){
     return{
       articleId: this.$route.params.id
