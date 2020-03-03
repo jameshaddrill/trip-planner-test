@@ -70,15 +70,18 @@
 
 <style lang="scss" scoped>
     .trip-planner {
-        margin-bottom: 1.5rem;
+        margin-top: 3rem;
 
         &__listing {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
         }
 
         &__title {
-            margin-bottom: 2rem;
 
             a {
                 color: inherit;
