@@ -1,5 +1,5 @@
 ### Running the project
-```yarn start``` will run the project on http://localhost:3000
+```yarn start``` will run the project on http://localhost:8080
 
 ```yarn test``` will run the unit test sample
 
