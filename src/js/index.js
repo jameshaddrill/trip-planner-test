@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
+import localforage from 'localforage';
 
 import App from '../App.vue';
 import routeData from '../routes/routes';
@@ -9,6 +10,7 @@ import '../css/index.scss';
 
 Vue.use(VueRouter);
 Vue.prototype.$http = axios;
+Vue.prototype.$localStorage = localforage;
 
 const routes = routeData;
 const router = new VueRouter({
