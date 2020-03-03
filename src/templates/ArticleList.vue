@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>Article page</h1>
-    <p>ID: {{ articleId }}</p>
+    <h1>Article List page</h1>
   </div>
 </template>
 
@@ -9,9 +8,7 @@
 export default{
   // name:
   data(){
-    return{
-      articleId: this.$route.params.id
-    }
+    return{}
   },
   methods:{
   }

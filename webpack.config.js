@@ -6,7 +6,8 @@ const pkg = require('./package.json')
 module.exports = {
 	entry: './src/js/index.js',
   	output: {
-		filename: 'index.js'
+		publicPath: '/',
+		filename: 'js/main.js'
   	},
   	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
@@ -17,6 +18,9 @@ module.exports = {
 		}),
 		new VueLoaderPlugin()
 	],
+	devServer: { // Configure the local web server
+		historyApiFallback: true
+	},
   	module: {
 		rules: [{
 			test: /\.vue$/,
