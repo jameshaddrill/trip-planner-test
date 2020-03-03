@@ -5,7 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "vue",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest/",
+      ".*\\.(vue)$": "vue-jest"
+    }
   },
   "repository": "git@gitlab.com:awhenderson/trip-planner-test.git",
   "author": "ahenderson <allan.henderson@visitscotland.com>",
@@ -13,8 +27,11 @@
   "private": true,
   "dependencies": {
     "@vue/cli": "^4.2.2",
+    "@vue/test-utils": "^1.0.0-beta.31",
     "axios": "^0.19.2",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
@@ -25,6 +42,7 @@
     "sass-loader": "^8.0.2",
     "url-loader": "^3.0.0",
     "vue": "^2.6.11",
+    "vue-jest": "^3.0.5",
     "vue-loader": "^15.9.0",
     "vue-router": "^3.1.6",
     "vue-style-loader": "^4.1.2",

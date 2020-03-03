@@ -3,7 +3,6 @@
         <div class="row">
             <div class="col-12 col-md-8">
                 <h1 class="trip-planner__title">My trip planner</h1>
-                {{$root.dataLoaded}}
                 <section class="trip-planner" v-if="$root.dataLoaded && likedArticlesSet">
                     <div class="trip-planner__listing"  v-for="article in filteredArticles" :key="article._id">
                             <h2 class="trip-planner__title"><router-link :to="`/article/${article._id}`">{{article.name}}</router-link></h2>
