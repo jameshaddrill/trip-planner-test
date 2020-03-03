@@ -29,7 +29,7 @@ module.exports = {
 		{
             test: /\.scss$/,
             use: [
-                "style-loader",
+                "vue-style-loader",
                 "css-loader",
                 "sass-loader"
             ]
@@ -46,6 +46,16 @@ module.exports = {
 			use: {
 		  		loader: 'file-loader'
 			}
-		}]
+		},
+		{
+			test: /\.(png|svg|jpe?g|gif)$/,
+			loader: 'url-loader',
+			//include: path.join(__dirname, ''),
+			options: {
+			publicPath: './',
+			limit: 10000,
+			},
+		  },
+		]
 	}
 }

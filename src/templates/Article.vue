@@ -1,8 +1,14 @@
 <template>
-  <article v-if="$root.dataLoaded">
-      <h1>{{currentArticle.name}}</h1>
-      <p>{{currentArticle.body}}</p>
-  </article>
+  <div class="container">
+	  <div class="row">
+		  <div class="col-12">
+        <article class="article" v-if="$root.dataLoaded">
+            <h1 class="article__title">{{currentArticle.name}}</h1>
+            <p class="article__content">{{currentArticle.body}}</p>
+        </article>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -23,5 +29,14 @@ export default{
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .article {
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__content {
+      line-height: 1.5;
+    }
+  }
 </style>

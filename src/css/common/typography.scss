@@ -1,0 +1,21 @@
+body, 
+input, 
+select {
+    @include font-size(16);
+    font-family: "Roboto", sans-serif;
+}
+
+.h1 {
+    @include font-size(30, 34);
+}
+
+p, 
+label, 
+li, 
+input {
+    font-weight: 300;
+}
+
+.error-text {
+    color: #c12c2c;
+}
