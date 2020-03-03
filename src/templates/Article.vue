@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <h1>Article page</h1>
-    <p>ID: {{ articleId }}</p>
-  </div>
+  <article v-if="$root.dataLoaded">
+      <h1>{{currentArticle.name}}</h1>
+      <p>{{currentArticle.body}}</p>
+  </article>
 </template>
 
 <script>
 export default{
-  name: 'article',
+  name: 'article-page',
   data(){
     return{
-      articleId: this.$route.params.id
+      articleId: this.$route.params.id,
     }
+  },
+  computed: {
+	  currentArticle: function() {
+      return(this.$root.articles.filter(article => article._id === this.articleId)[0]);
+	  }
   },
   methods:{
   }

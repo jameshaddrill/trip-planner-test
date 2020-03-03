@@ -1,9 +1,16 @@
 <template>
     <div>
-        <router-view></router-view>
+        <router-view :articleContent="articleContent"></router-view>
     </div>
 </template>
 
 <script>
+    export default{
+        data() {
+            return {
+                articleContent: this.$root.articles
+            }
+        }
+    }
 
 </script>

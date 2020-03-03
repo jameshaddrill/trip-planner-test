@@ -17,5 +17,19 @@ const router = new VueRouter({
 
 const vm = new Vue({
     router,
+    data() {
+        return {
+            articles: {},
+            dataLoaded: false
+        }
+    },
     render: h => h(App),
+    mounted() {
+        this.$http
+            .get('/data/trip-planner.json')
+            .then(response => {
+                this.articles = response.data;
+                this.dataLoaded = true;
+            })
+    }
 }).$mount('#app');
